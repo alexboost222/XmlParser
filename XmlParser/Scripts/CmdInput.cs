@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Xml;
 
-namespace XmlParser
+namespace XmlParser.Scripts
 {
     public static class CmdInput
     {
