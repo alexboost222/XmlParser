@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Loader="simple-0.2" Name="1.1">
+  <Desc>
+    <Identifier>oge1</Identifier>
+    <Name>1. Кислотно-основные индикаторы</Name>
+    <ShortDescription>
+      Описание в разработке
+    </ShortDescription>
+    <LevelPacks>oge</LevelPacks>
+  </Desc>
+  <Phases>
+    <Phase>
+      <VesselList >
+        <Item Label="HCl/0.1M" Type="CylinderFlaskLiquid/500/14">
+          H+1/0.05;Cl-1/0.05;H2O/27.78
+        </Item>
+        <Item Label="NaOH/0.1M" Type="CylinderFlaskLiquid/500/14">
+          Na+1/0.05;OH-1/0.05;H2O/27.78
+        </Item>
+        <Item Label="H₂O" Type="CylinderFlaskLiquid/500/14">
+          H2O/27.78
+        </Item>
+        
+        <Item Place="3" Label="bromthymol_blue" Type="Dropper/100/14">
+          bromthymolblue/0.001;H2O/5.55
+        </Item>
+        <Item Place="3" Label="methyl_orange" Type="Dropper/100/14">
+          methylorange/0.001;H2O/5.55
+        </Item>
+        <Item Place="3" Label="phenolphthalein" Type="Dropper/100/14">
+          phenolphtalein/0.001;H2O/5.55
+        </Item>
+        <Item Place="3" Label="litmus" Type="Dropper/100/14">
+          litmus/0.001;H2O/5.55
+        </Item>
+      </VesselList>
+      <EquipmentList>
+        <Item Place="2" Type="Tablet">
+          Изучите окраску индикаторов в различных средах. Наблюдения занесите в журнал.
+        </Item>
+      </EquipmentList>
+    </Phase>
+    <Phase>
+      <VesselList>
+        <Item Place="3" Label="bromthymol_blue" Type="Dropper/100/14">
+          bromthymolblue/0.001;H2O/5.55
+        </Item>
+        <Item Place="3" Label="methyl_orange" Type="Dropper/100/14">
+          methylorange/0.001;H2O/5.55
+        </Item>
+        <Item Place="3" Label="phenolphthalein" Type="Dropper/100/14">
+          phenolphtalein/0.001;H2O/5.55
+        </Item>
+        <Item Place="3" Label="litmus" Type="Dropper/100/14">
+          litmus/0.001;H2O/5.55
+        </Item>
+
+        <Item Label="Раствор 1" Type="CylinderFlaskLiquid/500/14">
+          H+1/0.05;Cl-1/0.05;H2O/27.78
+        </Item>
+        <Item Label="Раствор 2" Type="CylinderFlaskLiquid/500/14">
+          Na+1/0.05;OH-1/0.05;H2O/27.78
+        </Item>
+      </VesselList>
+      <EquipmentList>
+        <Item Place="2" Type="Tablet">
+          Используя индикаторы, определите среду выданных Вам Растворов 1 и 2. Наблюдения и ответ занесите в журнал.
+        </Item>
+      </EquipmentList>
+    </Phase>
+  </Phases>
+  
+  <Journal Name="EntryPoint">
+    <TableWindow Name="Main" DisplayName="Журнал">
+      <Phase>
+        <Cell Ref="Done"/>
+        <Cell Ref="Observation"/>
+        <Cell Ref="Conclusion_0"/>
+      </Phase>
+      <Phase Ref="GlobalConclusion">
+        <Cell Ref="Done"/>
+        <Cell Ref="Observation"/>
+        <Cell Ref="Conclusion_1"/>
+      </Phase>
+    </TableWindow>
+    
+    <StringListWindow Name="Observation" DisplayName="Наблюдения">
+      <List Type="Radio" DisplayName="Жидкость">
+        <Item>Цвет жидкости не изменился</Item>
+        <Item><Tag>Color</Tag> цвет жидкости изменился на <Tag>Color</Tag></Item>
+      </List>
+    </StringListWindow>
+
+    <StringContainersWindow Name="Conclusion_0" DisplayName="Выводы">
+      <List Type="String">
+        <Item>Если среда <Tag>Environment</Tag>, то <Tag>Ind</Tag> изменяет цвет на <Tag>Color</Tag></Item>
+      </List>
+    </StringContainersWindow>
+    
+    <StringListWindow Name="Conclusion_1" DisplayName="Выводы">
+      <List Type="Checkbox" DisplayName="Среда раствора">
+        <Item>Среда раствора 1 <Tag>Environment</Tag></Item>
+        <Item>Среда раствора 2 <Tag>Environment</Tag></Item>
+      </List>
+    </StringListWindow>
+    
+    <StringContainersWindow Name="GlobalConclusion" DisplayName="Контрольные вопросы">
+      <List Type="String">
+        <Item>Среда раствора 1 <Tag>Environment</Tag></Item>
+        <Item>Среда раствора 2 <Tag>Environment</Tag></Item>
+      </List>
+    </StringContainersWindow>
+    
+    <ListWindow Name="Color" DisplayName="Цвет" Default="Выбрать">
+      <List Type="Radio">
+        <Item>бесцветный</Item>
+        <Item>белый</Item>
+        <Item>черный</Item>
+        <Item>синий</Item>
+        <Item>оранжевый</Item>
+        <Item>желтый</Item>
+        <Item>зеленый</Item>
+        <Item>красный</Item>
+        <Item>фиолетовый</Item>
+        <Item>малиновый</Item>
+      </List>
+    </ListWindow>
+    
+    <ListWindow Name="Environment" DisplayName="Среда" Default="Выбрать">
+      <List Type="Radio">
+        <Item>кислая</Item>
+        <Item>нейтральная</Item>
+        <Item>основная</Item>
+      </List>
+    </ListWindow>
+    
+    <ListWindow Name="Ind" DisplayName="Индикатор" Default="Выбрать индикатор">
+      <List Type="Radio">
+        <Item>лакмус</Item>
+        <Item>метиловый оранжевый</Item>
+        <Item>фенолфталеин</Item>
+        <Item>бромтимоловый синий </Item>
+      </List>
+    </ListWindow>
+    
+  </Journal>
+</Level>

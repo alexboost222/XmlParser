@@ -1,0 +1,5 @@
+D:\XmlParser\XmlParser\obj\Debug\XmlParser.csprojAssemblyReference.cache
+D:\XmlParser\XmlParser\bin\Debug\XmlParser.exe
+D:\XmlParser\XmlParser\bin\Debug\XmlParser.pdb
+D:\XmlParser\XmlParser\obj\Debug\XmlParser.exe
+D:\XmlParser\XmlParser\obj\Debug\XmlParser.pdb

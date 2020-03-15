@@ -1,2 +1,6 @@
 #JETBrains filed
 *.idea
+
+#Builds and other useless files
+*.exe
+*.pdb
