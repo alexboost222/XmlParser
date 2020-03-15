@@ -8,3 +8,5 @@
 #Bin and obj files
 XmlParser/bin
 XmlParser/obj
+
+packages/
