@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level Loader="simple-0.2" Name="6.1">
+  <Desc>
+    <Identifier>oge10</Identifier>
+    <Name>10. Восстановительные свойства галогенидов</Name>
+    <ShortDescription>
+      Описание в разработке
+    </ShortDescription>
+    <LevelPacks>oge</LevelPacks>
+  </Desc>
+  <Phases>
+    <Phase>
+      <VesselList >
+        <Item Label="H2SO4/конц." Type="CylinderFlaskLiquid/500/14">
+          H+1/17.5;SO4-2/8.75;H2O/2
+        </Item>
+        <Item Label="H2SO4/конц." Type="CylinderFlaskLiquid/500/14">
+          H+1/17.5;SO4-2/8.75;H2O/2
+        </Item>
+        
+        <Item Label="KCl" Type="CylinderFlaskSolid/1000/14">
+          KCl/5
+        </Item>
+        <Item Label="KBr" Type="CylinderFlaskSolid/1000/14">
+          KBr/5
+        </Item>
+        <Item Label="KI" Type="CylinderFlaskSolid/1000/14">
+          KI/5
+        </Item>
+      </VesselList>
+      <EquipmentList>
+        <Item Place="2" Type="Tablet">
+          Проведите реакции между концентрированной кислотой и галогенидами. Занесите наблюдения в журнал. Сделайте вывод об изменении восстановительных свойств в ряду галогенидов.
+        </Item>
+        <Item Place="3" Type="GasAnalyser">
+          methylorange,phenolphtalein,KMnO4
+        </Item>
+        <Item Place="4" Type="SpoonSpawner"/>
+      </EquipmentList>
+    </Phase>
+  </Phases>
+  
+  <Journal Name="EntryPoint">
+    <TableWindow Name="Main" DisplayName="Журнал">
+      <Phase Ref="GlobalConclusion">
+        <Cell Ref="Done"/>
+        <Cell Ref="Observation"/>
+        <Cell Ref="Conclusion"/>
+      </Phase>
+    </TableWindow>
+    
+    <StringListWindow Name="Observation" DisplayName="Наблюдения" View="Scroll">
+      <List Type="Radio" DisplayName="Жидкость">
+            <Item>Нет жидкости</Item>
+            <Item>Цвет жидкости не изменился</Item>
+            <Item><Tag>Color</Tag> цвет жидкости изменился на <Tag>Color</Tag></Item>
+        </List>
+        <List Type="Radio" DisplayName="Осадок/Твёрдое вещество">
+            <Item>Нет осадка/твёрдого вещества</Item>   
+            <Item>Нет изменений осадка/твёрдого вещества</Item>
+            <Item>Осадок/твёрдое вещество растворился полностью</Item>
+            <Item>Осадок/твёрдое вещество растворился частично</Item>
+            <Item>Выпал <Tag>Color</Tag> осадок</Item>
+            <Item><Tag>Color</Tag> осадок/твёрдое вещество изменил цвет на <Tag>Color</Tag></Item>
+        </List>
+      <List Type="Radio" DisplayName="Газ">
+        <Item>Нет газа</Item>
+        <Item>Выделился <Tag>Color</Tag> газ</Item>
+        <Item>Газ поглотился</Item>
+      </List>
+    </StringListWindow>
+
+    <StringListWindow Name="Conclusion" DisplayName="Выводы">
+      <List Type="Checkbox">
+        <Item>Выделяющийся газ имеет <Tag>Type</Tag></Item>
+        <Item>Выделяющийся газ <Tag>Redox</Tag></Item>
+        <Item>Можно предположить, что в ходе реакции выделяется <Tag>Gas</Tag> + <Tag>Gas</Tag></Item>
+      </List>
+    </StringListWindow>
+    
+    <StringContainersWindow Name="GlobalConclusion" DisplayName="Контрольные вопросы">
+      <List Type="String">
+        <Item>Как изменяются восстановительные свойства в ряду Cl⁻, Br⁻, I⁻?. Ответ - <Tag>Change</Tag></Item>
+      </List>
+    </StringContainersWindow>
+    
+    <ListWindow Name="Color" DisplayName="Цвет" Default="цвет">
+      <List Type="Radio">
+        <Item>бесцветный</Item>
+        <Item>белый</Item>
+        <Item>черный</Item>
+        <Item>синий</Item>
+        <Item>оранжевый</Item>
+        <Item>желтый</Item>
+        <Item>зеленый</Item>
+        <Item>красный</Item>
+        <Item>фиолетовый</Item>
+        <Item>малиновый</Item>
+      </List>
+    </ListWindow>
+
+    <ListWindow Name="Gas" DisplayName="Газ" Default="газ">
+      <List Type="Radio">
+        <Item>HCl</Item>
+        <Item>HBr</Item>
+        <Item>HI</Item>
+        <Item>Cl₂</Item>
+        <Item>Br₂</Item>
+        <Item>I₂</Item>
+        <Item>SO₂</Item>
+        <Item>H₂S</Item>
+      </List>
+    </ListWindow>
+
+    <ListWindow Name="Redox" DisplayName="Проявляет свойства" Default="проявляет свойства">
+      <List Type="Radio">
+        <Item>проявляет окислительные свойства</Item>
+        <Item>проявляет восстановительные свойства</Item>
+        <Item>не проявляет ни окислительных, ни восстановительных свойств</Item>
+      </List>
+    </ListWindow>
+
+    <ListWindow Name="Type" DisplayName="Характер" Default="характер">
+      <List Type="Radio">
+        <Item>кислотный характер</Item>
+        <Item>основный характер</Item>
+        <Item>неопределяемый характер</Item>
+      </List>
+    </ListWindow>
+
+    <ListWindow Name="Change" DisplayName="Изменения" Default="как?">
+      <List Type="Radio">
+        <Item>увеличиваются</Item>
+        <Item>уменьшаются</Item>
+        <Item>не изменяются</Item>
+      </List>
+    </ListWindow>
+  </Journal>
+</Level>

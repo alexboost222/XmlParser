@@ -44,7 +44,5 @@ namespace XmlParser.Scripts
 
             return answer;
         }
-        
-        
     }
 }

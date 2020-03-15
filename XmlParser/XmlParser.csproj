@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\CmdInput.cs" />
+    <Compile Include="Scripts\LevelInfoExtractor.cs" />
     <Compile Include="Scripts\Program.cs" />
   </ItemGroup>
   <ItemGroup>
