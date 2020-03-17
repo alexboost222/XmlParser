@@ -56,7 +56,49 @@ namespace XmlParser.Scripts
         private static bool JournalValidator(in List<string> tabletsText) 
             => tabletsText.All(text => !text.Contains("Журнал") && !text.Contains("журнал"));
 
-        private static bool SubscriptValidator(XmlElement element)
+        public static void SubscriptFormatter(XmlElement element)
+        {
+            const string searchingAttribute = "Label";
+
+            if (element.HasAttribute(searchingAttribute))
+            {
+                char[] label = element.GetAttribute(searchingAttribute).ToCharArray();
+
+                for (int i = 0; i < label.Length && label[i] != '/'; i++)
+                {
+                    if (subscripts.TryGetValue(label[i], out char value))
+                    {
+                        label[i] = value;
+                    }
+                }
+
+                element.SetAttribute(searchingAttribute, new string(label));
+            }
+
+            for (int i = 0; i < element.ChildNodes.Count; ++i)
+            {
+                if (element.ChildNodes[i] is XmlElement childElement)
+                {
+                    SubscriptFormatter(childElement);
+                }
+            }
+        }
+
+        private static Dictionary<char, char> subscripts = new Dictionary<char, char>
+        {
+            {'0', '₀'},
+            {'1', '₁'},
+            {'2', '₂'},
+            {'3', '₃'},
+            {'4', '₄'},
+            {'5', '₅'},
+            {'6', '₆'},
+            {'7', '₇'},
+            {'8', '₈'},
+            {'9', '₉'},
+        };
+        
+        public static bool SubscriptValidator(XmlElement element)
         {
             const string searchingAttribute = "Label";
 
