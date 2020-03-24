@@ -34,11 +34,14 @@ namespace XmlParser.Scripts
                     writer.Write("Название: ");
                     writer.WriteLine(level.name);
 
-                    for (int i = 0; i < level.tabletsText.Count; i++)
+                    writer.WriteLine($"Описание: ");
+                    writer.WriteLine(level.description);
+                    
+                    /*for (int i = 0; i < level.tabletsText.Count; i++)
                     {
                         writer.WriteLine($"Фаза {i}: ");
                         writer.WriteLine(level.tabletsText[i]);
-                    }
+                    }*/
                 }
             }
         }

@@ -34,6 +34,7 @@ namespace XmlParser.Scripts
 
             levelInfo.pack = ExtractInnerTextByNodeName(doc.DocumentElement, "LevelPacks");
             levelInfo.name = ExtractInnerTextByNodeName(doc.DocumentElement, "Name");
+            levelInfo.description = ExtractInnerTextByNodeName(doc.DocumentElement, "ShortDescription");
             
             ExtractTabletsText(doc.DocumentElement, ref levelInfo.tabletsText);
             levelInfo.journalValid = JournalValidator(in levelInfo.tabletsText);

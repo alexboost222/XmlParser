@@ -7,6 +7,7 @@ namespace XmlParser.Scripts
             public List<string> tabletsText;
             public string name;
             public string pack;
+            public string description;
             public bool dotValid;
             public bool journalValid;
             public bool subscriptValid;

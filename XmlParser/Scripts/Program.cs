@@ -12,21 +12,21 @@ namespace XmlParser.Scripts
         {
             string folderPath = CmdInput.GetFolderPath();
             
-            List<(XmlDocument doc, string path)> docs = CmdInput.LoadAllXmlWithPath(folderPath);
-            //List<XmlDocument> docs = CmdInput.LoadAllXml(folderPath);
+            //List<(XmlDocument doc, string path)> docs = CmdInput.LoadAllXmlWithPath(folderPath);
+            List<XmlDocument> docs = CmdInput.LoadAllXml(folderPath);
             
             Console.OutputEncoding = Encoding.UTF8;
 
-            foreach ((XmlDocument doc, string path) in docs)
+            /*foreach ((XmlDocument doc, string path) in docs)
             {
                 LevelInfoExtractor.SubscriptFormatter(doc.DocumentElement);
                 
                 Console.WriteLine((LevelInfoExtractor.SubscriptValidator(doc.DocumentElement) ? "YES " : "NO ") + path);
 
                 doc.Save(path);
-            }
+            }*/
 
-            /*List<LevelInfo> infos = docs.Select(LevelInfoExtractor.ExtractLevelInfo).ToList();
+            List<LevelInfo> infos = docs.Select(LevelInfoExtractor.ExtractLevelInfo).ToList();
             
             infos.ForEach(t => Console.WriteLine(t.name));
 
@@ -53,7 +53,7 @@ namespace XmlParser.Scripts
             }
             
             Console.WriteLine("Export successful");
-            Console.ReadKey();*/
+            Console.ReadKey();
         }
     }
 }
